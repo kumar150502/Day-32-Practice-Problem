@@ -1,0 +1,23 @@
+CREATE DATABASE payroll_service;
+SHOW DATABASES;
+USE payroll_service;
+CREATE TABLE employee_payroll (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    start_date DATE NOT NULL
+);
+SHOW DATABASES;
+SELECT * FROM employee_payroll;
+INSERT INTO employee_payroll (name, salary, start_date)
+VALUES ('Kumar', 50000.00, '2023-07-25'),
+    ('Bhanu', 60000.00, '2023-07-26'),
+    ('Joseph', 55000.00, '2023-07-27'),
+    ('Krishna', 52000.00, '2023-07-28');
+    SELECT * FROM employee_payroll;
+    SELECT salary
+FROM employee_payroll
+WHERE name = 'Kumar';
+SELECT *
+FROM employee_payroll
+WHERE start BETWEEN CAST('2023-07-25' AS DATE) AND DATE(NOW());
